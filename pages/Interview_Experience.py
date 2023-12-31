@@ -64,24 +64,19 @@ if Role_prompt and Company_prompt:
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
 
-                # Extracting information from the webpage (modify as needed)
                 title = soup.title.string
                 text = soup.get_text()
                 cleaned_text = remove_duplicate_empty_lines(text)
 
-                # Append extracted text to accumulated text
-                extracted_text += cleaned_text + '\n\n'  # Adjust formatting as needed
+                extracted_text += cleaned_text + '\n\n'  
 
-        # Process the accumulated text with LangChain
                 
         try:
             max_bytes = 50000
             if len(extracted_text.encode('utf-8')) > max_bytes:
-                # Calculate the reduction factor to fit within the limit
                 reduction_factor = max_bytes / len(extracted_text.encode('utf-8'))
                 new_text_length = int(len(extracted_text) * reduction_factor)
-                
-                # Reduce the text length while preserving formatting
+        
                 extracted_text = extracted_text[:new_text_length]
             experience= interview_chain.run(prompt_role=Role_prompt,prompt_company=Company_prompt, duckduckgo_research=extracted_text)
             if experience:
