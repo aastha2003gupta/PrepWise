@@ -7,7 +7,7 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import GooglePalm
 from langchain.chains import LLMChain
 
-api_key = "AIzaSyC4GEY4Ir_SZ2fp9TS03SwF_R9rpPTFm38"
+api_key = ""
 llm = GooglePalm(google_api_key=api_key, temperature=0.7)
 
 def get_pdf_text(pdf_file):
