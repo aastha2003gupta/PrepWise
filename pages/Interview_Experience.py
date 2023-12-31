@@ -8,7 +8,7 @@ import json
 import scrapy
 import requests
 from bs4 import BeautifulSoup
-api_key = "AIzaSyC4GEY4Ir_SZ2fp9TS03SwF_R9rpPTFm38"
+api_key = ""
 google_llm = GooglePalm(google_api_key=api_key)
 
 st.title('Interview Experience')
