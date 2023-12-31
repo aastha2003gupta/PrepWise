@@ -6,7 +6,7 @@ import streamlit as st
 import textwrap
 from PyPDF2 import PdfReader
 
-api_key = 'AIzaSyC4GEY4Ir_SZ2fp9TS03SwF_R9rpPTFm38'
+api_key = ''
 llm = GooglePalm(google_api_key=api_key, temperature=0.7)
 
 # Function to get text from a PDF file
